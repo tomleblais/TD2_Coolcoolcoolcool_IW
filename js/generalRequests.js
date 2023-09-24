@@ -22,3 +22,15 @@ function fetchRawText(url) {
         }
     })
 }
+
+/**
+ * Fetch JSON data from the specified URL
+ * @param {string} url - URL from which to retrieve data
+ * @returns {Promise} Promise that resolves with JSON data or rejects with an error
+ */
+function fetchJSON(url) {
+    return fetchRawText(url)
+        .then(rawText => {
+            return JSON.parse(rawText)
+        })
+}
