@@ -6,11 +6,11 @@
  */
 function fetchCommune(code){
     return new Promise((resolve, reject) => {
-        postalCode = parseInt(code)
+        const postalCode = parseInt(code)
         if (isNaN(postalCode)) {
             reject(new Error("Invalid postal code (not a number)"))
         }
-        else if(postalCode < 1000 || postalCode > 100000) {
+        else if(postalCode < 900 || postalCode > 100000) {
             reject(new Error("Invalid code (too large or too small)"))
         }
         else{
