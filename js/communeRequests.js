@@ -8,10 +8,10 @@ function fetchCommune(code){
     return new Promise((resolve, reject) => {
         const postalCode = parseInt(code)
         if (isNaN(postalCode)) {
-            reject(new Error("Invalid postal code (not a number)"))
+            reject(new InvalidCodeError("Invalid postal code (not a number)"))
         }
         else if(postalCode < 900 || postalCode > 100000) {
-            reject(new Error("Invalid code (too large or too small)"))
+            reject(new InvalidCodeError("Invalid code (too large or too small)"))
         }
         else{
             fetchJSON("https://geo.api.gouv.fr/communes?codePostal=" + postalCode)
@@ -20,7 +20,7 @@ function fetchCommune(code){
                         resolve(data)
                     }
                     else{
-                        reject(new Error("this commune code does not exist"))
+                        reject(new CommuneNotFoundError("this commune code does not exist"))
                     }
                 })
                 .catch(reject)
