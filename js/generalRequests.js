@@ -3,13 +3,13 @@
  * @param {string} url - URL from which to retrieve data
  * @returns {Promise} Promise that resolves with raw text or rejects with an error
  */
-function fetchRawText(url) {
+function fetchJSON(url) {
     return new Promise((resolve, reject) => {
         if (fetch) {
             fetch(url)
                 .then(response => {
                     if (response.ok) {
-                        resolve(response.text())
+                        resolve(response.json())
                     } else {
                         reject(new Error(`HTTP error! Status: ${response.status}`))
                     }
@@ -21,16 +21,4 @@ function fetchRawText(url) {
             reject(new Error("Your browser does not support the fetch API"))
         }
     })
-}
-
-/**
- * Fetch JSON data from the specified URL
- * @param {string} url - URL from which to retrieve data
- * @returns {Promise} Promise that resolves with JSON data or rejects with an error
- */
-function fetchJSON(url) {
-    return fetchRawText(url)
-        .then(rawText => {
-            return JSON.parse(rawText)
-        })
 }
