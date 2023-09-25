@@ -5,27 +5,13 @@ function fetchWeather(inseeCode){
         const regex = /^[a-zA-Z0-9]{5}$/;
 
         if (!regex.test(inseeCode)) {
-            reject(new Error("Invalid code"));
+            reject(new InvalidCodeError("Invalid insee code"));
         } else {
             fetchJSON(`https://api.meteo-concept.com/api/forecast/daily?token=${TOKEN}&insee=${inseeCode}`)
             .then(data => {
                 resolve(data.forecast[0]);
             })
-            .catch(error => {
-                if (error instanceof Error) {
-                    reject(new Error("This commune does not exist"));
-                } else {
-                    reject(error);
-                }
-            });
+            .catch(reject);
         }
     });
 }
-
-fetchWeather("14999")
-    .then(data => {
-        console.log(data)
-    })
-    .catch(error => {
-        console.log(error)
-    })

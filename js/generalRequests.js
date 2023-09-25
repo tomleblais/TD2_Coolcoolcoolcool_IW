@@ -6,17 +6,21 @@
 function fetchJSON(url) {
     return new Promise((resolve, reject) => {
         if (fetch) {
-            fetch(url)
-                .then(response => {
-                    if (response.ok) {
-                        resolve(response.json())
-                    } else {
-                        reject(new Error(`HTTP error! Status: ${response.status}`))
-                    }
-                })
-                .catch(error => {
-                    reject(error)
-                })
+            try {
+                fetch(url)
+                    .then(response => {
+                        if (response.ok) {
+                            resolve(response.json())
+                        } else {
+                            reject(new Error(`HTTP error! Status: ${response.status}`))
+                        }
+                    })
+                    .catch(error => {
+                        reject(error)
+                    })
+            } catch (error) {
+                reject(error)
+            }
         } else {
             reject(new Error("Your browser does not support the fetch API"))
         }
