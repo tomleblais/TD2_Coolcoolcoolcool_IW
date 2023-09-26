@@ -1,6 +1,109 @@
-/* Import de polices Google Fonts */
+/* Google fonts import : Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 * {
     font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --primary-darkColor: #5271ff;
+    --primary-darkFontColor: black;
+    --primary-buttonColor: #5ce1e6;
+    --primary-lightColor: white;
+    --primary-lightFontColor: ;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    font-weight: bolder;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main {
+    display: grid;
+    position: fixed;
+    width: 100vw;
+    top: 100px;
+    left: 0;
+    vertical-align: middle;
+}
+
+h1{
+    padding: 35px;
+    padding-right: 0;
+    font-size: xx-large;
+}
+
+input, button {
+    position: relative;
+    color: var(--primary-darkFontColor);
+    background-color: var(--primary-buttonColor);
+    border-radius: 10px;
+    border: none;
+    height: 48px;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 900;
+    margin: 5px;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 1px #281f49;
+    position: relative;
+    top: 0.5px;
+    left: 0.5px;
+}
+
+div.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--primary-darkColor);
+    border-radius: 10px;
+    width: fit-content;
+    margin: 25px auto;
+}
+
+div.weatherCard {
+    color: var(--primary-darkFontColor);
+    background-color: var(--primary-buttonColor);
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 900;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 25px auto;
+}
+
+div#voletGauche{
+    width: 50%;
+    display: block;
+}
+
+@media screen and (min-width: 470px) {
+    div.buttonContainer{
+        width: 412px;
+    }
+    div.weatherCard{
+        width: 412px;
+    }
+}
+
+@media screen and (max-width: 470px){
+    div.buttonContainer{
+        margin: 25px;
+    }
+    button, input {
+        width: 100%;
+    }
+    div.weatherCard{
+        margin: 25px;
+    }
 }
