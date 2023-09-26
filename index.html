@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Weather</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="https://kit.fontawesome.com/a73ab4fbdc.js" crossorigin="anonymous"></script>
-
     <script src="./js/errors/CommuneNotFoundError.js"></script>
     <script src="./js/errors/InvalidCodeError.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Instant weather</h1>
+        <hr>
     </header>
     <main>
         <div class="buttonContainer">
-            <div class="info">
-                <input type="number" placeholder="Code postal" id="postalCodeInput"></input>
-                <select id="communeSelect" disabled>
-                    <option>Selectionner</option>
-                </select>
-            </div>
+            <input type="number" placeholder="Code postal" id="postalCodeInput"></input>
+            <select id="communeSelect" disabled>
+                <option>Selectionner</option>
+
+            </select>
+        </div>
+        <div class="buttonContainer">
             <button id="submitButton" disabled>Envoyer</button>
         </div>
         <div class="meteoCard">
@@ -30,6 +35,12 @@
             <div class="footerCommune">
                 <p><span id="rain">??</span>% de pluie</p>
                 <p><span id="sun">??</span>h d'ensoleillement</p>
+        <h2 class="communeName">Commune</h2>
+            <p class="temperature"><span class="min">??</span>°C / <span class="max">??</span>°C</p>
+            <i class="weatherIcon fa-solid fa-sun fa-2xl" style="color: #ffff00;"></i>
+            <div class="statistics">
+                <p><span class="rain">??</span>%<br>de pluie</p>
+                <p><span class="sun">??</span>h<br>de soleil</p>
             </div>
         </div>
     </main>
@@ -43,4 +54,5 @@
     <script src="./js/HTMLPrinters.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
