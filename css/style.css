@@ -1,6 +1,148 @@
-/* Import de polices Google Fonts */
+/* Google fonts import : Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 * {
     font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --primary-darkColor: #5271ff;
+    --primary-darkFontColor: black;
+    --primary-buttonColor: #5ce1e6;
+    --primary-lightColor: white;
+    --primary-lightFontColor: white;
+}
+
+header{
+    width: 100%;
+    font-weight: bolder;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-darkColor);
+    z-index: 1;
+}
+
+body {
+    overflow: visible;
+}
+
+main {
+    display: grid;
+    position: relative;
+    width: 100vw;
+    top: 100px;
+    left: 0;
+    vertical-align: middle;
+    z-index: 0;
+}
+
+h1{
+    padding: 15px;
+    padding-right: 0;
+    font-size: xx-large;
+}
+
+input, button, select {
+    position: relative;
+    color: var(--primary-darkFontColor);
+    background-color: var(--primary-buttonColor);
+    border-radius: 10px;
+    border: none;
+    height: 48px;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 900;
+    margin: 5px;
+}
+
+select:disabled {
+    display: none;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 0.5px;
+    left: 0.5px;
+}
+
+div.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--primary-darkColor);
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+div.weatherCard {
+    color: var(--primary-darkFontColor);
+    background-color: var(--primary-buttonColor);
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+
+div.weatherCard * {
+    margin: 15px auto;
+    width: 100%;
+}
+
+.temperature {
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+.weatherIcon {
+    padding: 15px 0;
+    width: 100px;
+    font-size: 50px;;
+}
+
+.statistics {
+    display: flex;
+    position: relative;
+    width : 50%;
+}
+
+.statistics p {
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    width : 45%;
+}
+
+.communeName {
+    font-weight: 900;
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 10px;
+}
+
+@media screen and (min-width: 470px) {
+    div.buttonContainer{
+        width: 412px;
+    }
+    div.weatherCard{
+        width: 412px;
+    }
+}
+
+@media screen and (max-width: 470px){
+    div.buttonContainer{
+        margin: 25px;
+    }
+    /* button, input {
+        width: 100%;
+    } */
+    div.weatherCard{
+        margin: 25px;
+    }
 }
