@@ -16,21 +16,28 @@
 <body>
     <header>
         <h1>Instant weather</h1>
+        <hr>
     </header>
     <main>
         <div class="buttonContainer">
             <input type="number" placeholder="Code postal"></input>
-            <input type="number" placeholder="Commune"></input>
+            <select>
+                <option>Oui</option>
+                <option>Non</option>
+                <option>Jnsp</option>
+
+            </select>
         </div>
         <div class="buttonContainer">
             <button>Envoyer</button>
         </div>
+        <h2 class="communeName">Commune</h2>
         <div class="weatherCard">
-            <p> Min : <span id="min">??</span>°C / Max : <span id="max">??</span>°C</p>
-            <i class="fa-solid fa-sun fa-2xl" style="color: #ffff00;"></i>
-            <div class="footerCommune">
-                <p><span id="rain">??</span>% de pluie</p>
-                <p><span id="sun">??</span>h d'ensoleillement</p>
+            <p class="temperature"><span class="min">??</span>°C / <span class="max">??</span>°C</p>
+            <i class="weatherIcon fa-solid fa-sun fa-2xl" style="color: #ffff00;"></i>
+            <div class="statistics">
+                <p><span class="rain">??</span>%<br>de pluie</p>
+                <p><span class="sun">??</span>h<br>de soleil</p>
             </div>
         </div>
     </main>
