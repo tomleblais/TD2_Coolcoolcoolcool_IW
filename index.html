@@ -17,14 +17,16 @@
     <main>
         <div class="buttonContainer">
             <div class="info">
-                <input type="number" placeholder="Code postal"></input>
-                <input type="number" placeholder="Commune"></input>
+                <input type="number" placeholder="Code postal" id="postalCodeInput"></input>
+                <select id="communeSelect" disabled>
+                    <option>Selectionner</option>
+                </select>
             </div>
-            <button>Envoyer</button>
+            <button id="submit">Envoyer</button>
         </div>
         <div class="meteoCard">
             <p> Min : <span id="min">??</span>°C / Max : <span id="max">??</span>°C</p>
-            <i class="fa-solid fa-sun fa-2xl" style="color: #ffff00;"></i>
+            <i class="fa-solid fa-sun fa-2x"></i>
             <div class="footerCommune">
                 <p><span id="rain">??</span>% de pluie</p>
                 <p><span id="sun">??</span>h d'ensoleillement</p>
@@ -38,5 +40,6 @@
     <script src="./js/generalRequests.js"></script>
     <script src="./js/communeRequests.js"></script>
     <script src="./js/weatherRequests.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
