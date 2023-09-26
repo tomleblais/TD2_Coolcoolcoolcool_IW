@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Weather</title>
+    <link rel="stylesheet" href="./weather-icons/css/weather-icons.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://kit.fontawesome.com/a73ab4fbdc.js" crossorigin="anonymous"></script>
     <script src="./js/errors/CommuneNotFoundError.js"></script>
     <script src="./js/errors/InvalidCodeError.js"></script>
 </head>
@@ -31,8 +31,11 @@
         </div>
         <h2 class="communeName">Commune</h2>
         <div class="weatherCard">
-            <p class="temperature"><span class="min">??</span>°C / <span class="max">??</span>°C</p>
-            <i class="weatherIcon fa-solid fa-sun fa-2xl" style="color: #ffff00;"></i>
+            <h3 class="weatherDescription">Soleil</h3>
+            <i class="weatherIcon wi wi-day-sunny"></i>
+            <p class="temperature">
+                <span class="min">??</span>°C / <span class="max">??</span>°C
+            </p>
             <div class="statistics">
                 <p><span class="rain">??</span>%<br>de pluie</p>
                 <p><span class="sun">??</span>h<br>de soleil</p>
@@ -47,6 +50,7 @@
     <script src="./js/communeRequests.js"></script>
     <script src="./js/weatherRequests.js"></script>
     <script src="./js/HTMLPrinters.js"></script>
+    <script src="./js/weatherIcons.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
