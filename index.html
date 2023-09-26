@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Weather</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://kit.fontawesome.com/a73ab4fbdc.js" crossorigin="anonymous"></script>
     <script src="./js/errors/CommuneNotFoundError.js"></script>
@@ -20,7 +20,7 @@
     </header>
     <main>
         <div class="buttonContainer">
-            <input type="number" placeholder="Code postal" id="postalCodeInput"></input>
+            <input type="number" placeholder="Code postal" id="postalCodeInput">
             <select id="communeSelect" disabled>
                 <option>Selectionner</option>
 
@@ -29,13 +29,8 @@
         <div class="buttonContainer">
             <button id="submitButton" disabled>Envoyer</button>
         </div>
-        <div class="meteoCard">
-            <p> Min : <span id="min">??</span>°C / Max : <span id="max">??</span>°C</p>
-            <i class="fa-solid fa-sun fa-2x"></i>
-            <div class="footerCommune">
-                <p><span id="rain">??</span>% de pluie</p>
-                <p><span id="sun">??</span>h d'ensoleillement</p>
         <h2 class="communeName">Commune</h2>
+        <div class="weatherCard">
             <p class="temperature"><span class="min">??</span>°C / <span class="max">??</span>°C</p>
             <i class="weatherIcon fa-solid fa-sun fa-2xl" style="color: #ffff00;"></i>
             <div class="statistics">

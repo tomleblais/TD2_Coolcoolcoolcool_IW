@@ -82,7 +82,7 @@ div.weatherCard {
     border-radius: 10px;
     border: none;
     text-align: center;
-    display: flexbox;
+    display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
     margin: 15px auto;
