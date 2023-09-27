@@ -36,16 +36,81 @@ let data = {
 };
 
 function printWeatherCard(data){
-    const weatherInfo = getIconData(data.weather)
+    const weatherInfo = getIconData(data.weather);
+    const minInfo = data.tmin;
+    const maxInfo = data.tmax;
+    const rainInfo = data.probarain;
+    const sunInfo = data.sun_hours;
 
+    //<div class="weatherCard">
     const weatherCardElement = document.createElement("div");
     weatherCardElement.classList.add("weatherCard");
 
+    //<h3 class="weatherDescription">Soleil '</h3>' 
     const weatherDescriptionElement = document.createElement("h3");
     weatherDescriptionElement.classList.add("weatherDescription");
     weatherDescriptionElement.textContent = weatherInfo.description;
 
-    weatherCardElement.appendChild(weatherDescriptionElement)
+    //<i class="weatherIcon wi wi-day-sunny"> '</i>'
+    const weatherIcon = document.createElement("i");
+    weatherIcon.classList.add("weatherIcon");
+    weatherIcon.classList.add("wi");
+    weatherIcon.classList.add("weatherInfo.className");
+
+    //<p class="temperature">
+    const temperature = document.createElement("p");
+    temperature.classList.add("temperature");
+
+    //<span class="min">??</span>
+    const min = document.createElement("span");
+    min.classList.add("min");
+    min.textContent = minInfo;
+
+    //<span class="max">??</span>
+    const max = document.createElement("span");
+    max.classList.add("max");
+    max.textContent = maxInfo;
+
+    //<div class="statistics">
+    const statistics = document.createElement("div");
+    statistics.classList.add("statistics");
+
+
+    const rainParagraph = document.createElement("p");
+
+    //<span class="rain">??</span>
+    const rain = document.createElement("span");
+    rain.classList.add("rain");
+    rain.textContent = rainInfo;
+
+    //<br>
+    const br = document.createElement("br");
+
+    const sunParagraph = document.createElement("p");
+
+    //<span class="sun">??</span>
+    const sun = document.createElement("span");
+    sun.classList.add("sun");
+    sun.textContent = sunInfo;
+
+    const textNodeDegrees = document.createTextNode("°C /");
+    const textNodeDegree = document.createTextNode("°C");
+    const textNodeRain = document.createTextNode("% de pluie");
+    const textNodeSun = document.createTextNode("h de soleil");
+    weatherCardElement.appendChild(weatherDescriptionElement);
+    weatherCardElement.appendChild(weatherIcon);
+    weatherCardElement.appendChild(temperature);
+    weatherCardElement.appendChild(statistics);
+    temperature.append(min);
+    temperature.append(textNodeDegrees);
+    temperature.append(max);
+    temperature.append(textNodeDegree);
+    sunParagraph.appendChild(sun);
+    rainParagraph.appendChild(rain);
+    rainParagraph.appendChild(textNodeSun);
+    sunParagraph.appendChild(textNodeRain);
+    statistics.appendChild(sunParagraph);
+    statistics.appendChild(rainParagraph);
 
     return weatherCardElement;
 }
