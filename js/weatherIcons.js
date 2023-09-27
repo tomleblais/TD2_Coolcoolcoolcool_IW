@@ -101,7 +101,7 @@ function createIcon(code) {
     if (isNaN(weatherCode)) 
         throw new InvalidCodeError(`${code} is not a number`)
 
-    const iconData = iconsData.find((value, index, obj) => value.code == weatherCode)
+    const iconData = getIconData(weatherCode);
 
     // Check if the code exists
     if (!iconData)
@@ -112,4 +112,8 @@ function createIcon(code) {
     iconElement.classList.add(iconData.className)
     // iconElement.classList.add(iconData.type)
     return iconElement
+}
+
+function getIconData(weatherCode) {
+    return iconsData.find((value, index, obj) => value.code == weatherCode)
 }
