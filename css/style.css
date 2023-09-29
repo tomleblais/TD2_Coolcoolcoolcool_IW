@@ -6,20 +6,22 @@
 }
 
 :root{
-    --primary-darkColor: #5271ff;
+    --primary-darkColor: antiquewhite;
     --primary-darkFontColor: black;
-    --primary-buttonColor: #5ce1e6;
-    --primary-lightColor: white;
+    --primary-buttonColor: bisque;
+    --primary-inputColor: lightyellow;
+    --primary-lightColor: rgb(255, 204, 0);
+    --primary-lightTransparentColor: rgba(255, 204, 0, 0.2);
     --primary-lightFontColor: white;
 }
 
 header{
     width: 100%;
-    font-weight: bolder;
+    font-weight: 100;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--primary-darkColor);
+    background-color: var(--primary-headerColor);
     z-index: 1;
 }
 
@@ -46,7 +48,6 @@ h1{
 input, button, select {
     position: relative;
     color: var(--primary-darkFontColor);
-    background-color: var(--primary-buttonColor);
     border-radius: 10px;
     border: none;
     height: 48px;
@@ -55,6 +56,14 @@ input, button, select {
     font-size: x-large;
     font-weight: 900;
     margin: 5px;
+}
+
+input, select {
+    background-color: var(--primary-inputColor);
+}
+
+button {
+    background-color: var(--primary-buttonColor);
 }
 
 select:disabled {
