@@ -64,6 +64,7 @@ input, select {
 
 button {
     background-color: var(--primary-buttonColor);
+    user-select: none;
 }
 
 select:disabled {
