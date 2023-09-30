@@ -22,6 +22,7 @@ function printWeatherCard(data){
     const rainInfo = parseInt(data.probarain);
     const sunInfo = parseInt(data.sun_hours);
 
+
     // <div class="weatherCard">
     const weatherCardElement = document.createElement("div");
     weatherCardElement.classList.add("weatherCard");
