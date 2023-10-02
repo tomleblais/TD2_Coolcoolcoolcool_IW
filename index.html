@@ -26,18 +26,23 @@
             </select>
         </div>
         <div class="buttonContainer">
-            <input type="checkbox" id="checkLatitude">
-            <label for="checkLatitude">Latitude de la commune</label>
-            <input type="checkbox" id="checkLongitude">
-            <label for="checkLongitude">Longitude de la commune</label>
-            <input type="checkbox" id="checkCumulPluie">
-            <label for="checkCumulPluie">Cumul de pluie sur la journée</label>
-            <input type="checkbox" id="checkVentMoyen">
-            <label for="checkVentMoyen">Vent moyen à 10 mètres</label>
-            <input type="checkbox" id="checkDirectionVent">
-            <label for="checkDirectionVent">Direction du vent</label>
-            <input type="checkbox" id="checkToutSelectionner">
-            <label for="checkToutSelectionner">Tout sélectionner</label>
+            <div class="checkbox">
+                <input type="checkbox" id="checkLatitude">
+                <label for="checkLatitude">Latitude de la commune</label>
+                <input type="checkbox" id="checkLongitude">
+                <label for="checkLongitude">Longitude de la commune</label>
+                <input type="checkbox" id="checkCumulPluie">
+                <label for="checkCumulPluie">Cumul de pluie sur la journée</label>
+                <input type="checkbox" id="checkVentMoyen">
+                <label for="checkVentMoyen">Vent moyen à 10 mètres</label>
+                <input type="checkbox" id="checkDirectionVent">
+                <label for="checkDirectionVent">Direction du vent</label>
+                <input type="checkbox" id="checkToutSelectionner">
+                <label for="checkToutSelectionner">Tout sélectionner</label>
+            </div>
+
+            <label for="rangeNbJour">Nombre de jour : <span id="outputNbJour">1</span></label>
+            <input type="range" id="inputNbJour" min="1" max="7" step="1" value="1">
         </div>
         <div class="buttonContainer">
             <button id="submitButton" disabled>Envoyer</button>
