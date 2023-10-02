@@ -25,18 +25,16 @@ header {
     z-index: 1;
 }
 
-body {
-    overflow: visible;
-}
-
 main {
     display: grid;
+    justify-items: center;
     position: relative;
-    width: 100vw;
+    width: 100%;
     top: 100px;
     left: 0;
     vertical-align: middle;
     z-index: 0;
+    padding-bottom: 50px;
 }
 
 h1 {
@@ -89,23 +87,6 @@ div.buttonContainer {
     margin: 10px auto;
 }
 
-div.weatherCard {
-    color: var(--primary-darkFontColor);
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    margin: 15px auto;
-}
-
-div.weatherCard * {
-    margin: 15px auto;
-    font-weight: 100;
-    width: 100%;
-}
-
 .temperature {
     font-size: xx-large;
 }
@@ -134,7 +115,8 @@ div.weatherCard * {
     font-weight: 900;
     font-size: xx-large;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 50px;
+    padding-bottom: 25px;
 }
 
 @media screen and (min-width: 470px) {
@@ -150,11 +132,9 @@ div.weatherCard * {
 @media screen and (max-width: 470px) {
     div.buttonContainer {
         margin: 25px;
+        width: 100%;
     }
 
-    /* button, input {
-        width: 100%;
-    } */
     div.weatherCard {
         margin: 25px;
     }
@@ -186,6 +166,77 @@ div.weatherCard * {
     color: var(--primary-lightFontColor) !important;
 }
 
+div.weatherCard {
+    color: var(--primary-darkFontColor);
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 15px 0;
+}
+
+div.weatherCard * {
+    margin: 15px auto;
+    font-weight: 100;
+    width: 100%;
+}
+
+.weatherCardContainer {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+@media screen and (max-width: 1300px) {
+    .weatherCardContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .weatherCardContainer {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr; 
+    }
+}
+
+@media screen and (min-width: 880px) {
+    /* .weatherCardContainer {
+        width: 90%; 
+    } */
+
+    .weatherCard {
+        width: 100%;
+    }
+}
+
+/* Scrollbar CSS : https://codepen.io/stephenpaton-tech/full/JjRvGmY */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-darkColor) #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary-darkColor);
+    border-radius: 20px;
+  }
 
 /* Animation */
 
