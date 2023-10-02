@@ -26,37 +26,56 @@
                 <option>Selectionner</option>
             </select>
         </div>
-        <div class="buttonContainer">
-            <label for="inputNbJour">Nombre de jour : <span id="outputNbJour">1</span></label>
-            <input type="range" id="inputNbJour" min="1" max="7" step="1" value="1">
+        <div class="detailsContainer buttonContainer">
+            <div class="dayInputContainer">
+                <div>
+                    <label for="inputNbJour">Nombre de jour : <span id="outputNbJour">1</span></label>
+                </div>
+                <input type="range" id="inputNbJour" min="1" max="7" step="1" value="1">
+            </div>
+            <div class="optionsContainer">
+                <label class="optionsTitle">Options</label>
 
-            <ul class="options">
-                <label>Options :</label>
-                <li>
-                    <input type="checkbox" id="checkLatitude">
-                    <label for="checkLatitude">Latitude de la commune</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkLongitude">
-                    <label for="checkLongitude">Longitude de la commune</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkCumulPluie">
-                    <label for="checkCumulPluie">Cumul de pluie sur la journée</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkVentMoyen">
-                    <label for="checkVentMoyen">Vent moyen à 10 mètres</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkDirectionVent">
-                    <label for="checkDirectionVent">Direction du vent</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkToutSelectionner">
-                    <label for="checkToutSelectionner">Tout sélectionner</label> 
-                </li>            
-            </ul>
+                <ul class="options">
+                    <li>
+                        <label for="checkLatitude">
+                            <input type="checkbox" id="checkLatitude">
+                            Latitude de la commune
+                        </label>
+                    </li>
+                    <li>
+                        <label for="checkLongitude">
+                            <input type="checkbox" id="checkLongitude">
+                            Longitude de la commune
+                        </label>
+                    </label>
+                    </li>
+                    <li>
+                        <label for="checkCumulPluie">
+                            <input type="checkbox" id="checkCumulPluie">
+                            Cumul de pluie sur la journée
+                        </label>
+                    </li>
+                    <li>
+                        <label for="checkVentMoyen">
+                            <input type="checkbox" id="checkVentMoyen">
+                            Vent moyen à 10 mètres
+                        </label>
+                    </li>
+                    <li>
+                        <label for="checkDirectionVent">
+                            <input type="checkbox" id="checkDirectionVent">
+                            Direction du vent
+                        </label>
+                    </li>
+                    <li>
+                        <label for="checkToutSelectionner">
+                            <input type="checkbox" id="checkToutSelectionner">
+                            Tout sélectionner
+                        </label> 
+                    </li>            
+                </ul>
+            </div>
         </div>
         <div class="buttonContainer">
             <button id="submitButton" disabled>Envoyer</button>
