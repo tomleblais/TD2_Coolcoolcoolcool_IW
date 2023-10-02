@@ -165,7 +165,7 @@ div.weatherCard * {
 .weatherCardContainer {
     display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 25px;
 }
@@ -263,27 +263,6 @@ div.weatherCard * {
     color: var(--primary-lightFontColor) !important;
 }
 
-/* Scrollbar CSS : https://codepen.io/stephenpaton-tech/full/JjRvGmY */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-headerColor) #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-headerColor);
-    border-radius: 20px;
-  }
-  
 .detailsContainer {
     display: block;
     /* width: inherit; */
@@ -313,9 +292,31 @@ div.weatherCard * {
     border-radius: 5px;
     width: 300px;
 }
+
 .optionsContainer:hover .optionsTitle {
     border-radius: 5px 5px 0 0;
     background-color: #eee;
+}
+
+/* Scrollbar CSS : https://codepen.io/stephenpaton-tech/full/JjRvGmY */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-headerColor) #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-headerColor);
+    border-radius: 20px;
 }
 
 /* Pull down menu */
@@ -339,6 +340,7 @@ div.weatherCard * {
     padding: 5px;
     display: block;
 }
+
 .options li:hover {
     background-color: #eee;
 }
@@ -361,16 +363,16 @@ div.weatherCard * {
 @media screen and (max-width: 1300px) {
     .weatherCardContainer {
         display: grid;
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 }
 
 @media screen and (max-width: 880px) {
     .weatherCardContainer {
         display: grid;
-        grid-template-columns: 1fr; 
-        grid-template-rows: 1fr; 
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 }
 
@@ -406,22 +408,23 @@ div.weatherCard * {
 }
 
 /* Animation */
-  
+
 @keyframes dezoom {
     0% {
-      background-size: 500% 500%;
+        background-size: 500% 500%;
     }
+
     100% {
-      background-size: 100% 100%;
+        background-size: 100% 100%;
     }
-  }
-  
-  @keyframes zoom {
+}
+
+@keyframes zoom {
     0% {
-      background-size: 100% 100%;
+        background-size: 100% 100%;
     }
+
     100% {
-      background-size: 500% 500%;
+        background-size: 500% 500%;
     }
-  }
-  
+}
