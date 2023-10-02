@@ -7,10 +7,12 @@ window.addEventListener("load", event => {
     const weatherCardContainer = document.getElementsByClassName("weatherCardContainer")[0];
     const nbDay = document.getElementById("inputNbJour").value;
 
+    communeSelect.addEventListener("change", event => {
+        disabledInputs(false);
+    });
+
     submitButton.addEventListener("click", event => {
         const inseeCode = communeSelect.value;
-
-        disabledInputs();
 
         fetchWeather(inseeCode)
             .then(data => {
@@ -27,10 +29,14 @@ window.addEventListener("load", event => {
                 for(let i = 0; i < nbDay; i++){
                     const card = printWeatherCard(data.forecast[i]);
                     weatherCardContainer.appendChild(card);
-
                 }
                 communeNameElement.textContent = data.city.name;
                 communeNameElement.hidden = false;
+
+                if (weatherCardContainer.innerHTML != "") {
+                    disabledInputs(true);
+                    console.log("a");   
+                }
             })
             .catch(error => {
                 console.error(error)
@@ -39,6 +45,8 @@ window.addEventListener("load", event => {
     })
 
     postalCodeInput.addEventListener("input", event => {
+        disabledInputs(false);
+
         fetchCommune(postalCodeInput.value)
             .then(communes => {
 
