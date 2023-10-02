@@ -12,17 +12,29 @@
 /* Definition of colours */
 
 :root {
-    --primary-darkColor: darkturquoise;
-    --primary-darkFontColor: black;
-    --primary-buttonColor: aqua;
-    --primary-inputColor: aliceblue;
-    --primary-lightColor: rgb(255, 204, 0);
-    --primary-lightTransparentColor: rgba(255, 204, 0, 0.2);
-    --primary-lightFontColor: linen;
+    --primary-headerColor: whitesmoke;
+    --primary-mainColor: whitesmoke;
+    --primary-containerColor: #ebe7e1;
+    --primary-buttonColor: #1967D2;
+    --primary-selectColor: #739eda;
+    --primary-lightFontColor: white;
+    --primary-darkFontColor: #3C4043;
+    /* --secondary-headerColor: black;
+    --secondary-mainColor: #424549;
+    --secondary-containerColor: #1e2124;
+    --secondary-buttonColor: #002355;
+    --secondary-selectColor: #0b408a;
+    --secondary-lightFontColor: #3C4043;
+    --secondary-darkFontColor: white; */
+
 }
 
 
 /* HTML markup style */
+
+html {
+    background-color: var(--primary-headerColor);
+}
 
 header {
     width: 100%;
@@ -30,7 +42,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--primary-darkColor);
+    text-align: center;
+    background-color: var(--primary-headerColor);
     z-index: 1;
 }
 
@@ -43,20 +56,21 @@ main {
     left: 0;
     vertical-align: middle;
     z-index: 0;
+    background-color: var(--primary-mainColor);
     padding-bottom: 50px;
 }
 
 h1 {
     padding: 15px;
-    padding-right: 0;
     font-size: xx-large;
+    color: var(--primary-darkFontColor);
 }
 
 input[type=number],
 button,
 select {
     position: relative;
-    color: var(--primary-darkFontColor);
+    color: var(--primary-lightFontColor);
     border-radius: 10px;
     border: none;
     height: 48px;
@@ -69,7 +83,7 @@ select {
 
 input,
 select {
-    background-color: var(--primary-inputColor);
+    background-color: var(--primary-selectColor);
 }
 
 button {
@@ -94,7 +108,7 @@ button:active {
 div.buttonContainer {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--primary-darkColor);
+    background-color: var(--primary-containerColor);
     border-radius: 10px;
     margin: 5px auto;
 }
@@ -253,7 +267,7 @@ div.weatherCard * {
   /* Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--primary-darkColor) #ffffff;
+    scrollbar-color: var(--primary-headerColor) #ffffff;
   }
 
   /* Chrome, Edge, and Safari */
@@ -266,7 +280,7 @@ div.weatherCard * {
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-darkColor);
+    background-color: var(--primary-headerColor);
     border-radius: 20px;
   }
   
@@ -279,7 +293,7 @@ div.weatherCard * {
 .dayInputContainer {
     padding: 5px;
     margin: 5px auto;
-    color: #fff;
+    color: var(--primary-darkFontColor);
 }
 
 .dayInputContainer input[type=range] {
@@ -312,7 +326,7 @@ div.weatherCard * {
     z-index: 1;
     width: 310px;
     padding: 5px;
-    background-color: #fff;
+    background-color: var(--primary-containerColor);
     border-radius: 0 0 5px 10px;
     box-shadow: 0 5px 5px #ccc;
 }
