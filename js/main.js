@@ -5,9 +5,9 @@ window.addEventListener("load", event => {
     const postalCodeInput = document.getElementById("postalCodeInput");
     const submitButton = document.getElementById("submitButton");
     const weatherCardContainer = document.getElementsByClassName("weatherCardContainer")[0];
-    const nbDay = document.getElementById("inputNbJour").value;
+    const nbDay = parseInt(document.getElementById("inputNbJour").value);
 
-    communeSelect.addEventListener("change", event => {
+    communeSelect.addEventListener("click", event => {
         disabledInputs(false);
     });
 
