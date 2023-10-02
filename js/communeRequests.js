@@ -6,15 +6,15 @@
  */
 function fetchCommune(code){
     return new Promise((resolve, reject) => {
-        const postalCode = parseInt(code)
-        if (isNaN(postalCode)) {
+        const regex = /^[0-9]{4,6}$/;
+        if (!regex.test(code)) {
             reject(new InvalidCodeError("Invalid postal code (not a number)"))
         }
-        else if(postalCode < 900 || postalCode > 100000) {
+        else if(code < 900 || code > 100000) {
             reject(new InvalidCodeError("Invalid code (too large or too small)"))
         }
         else{
-            fetchJSON("https://geo.api.gouv.fr/communes?codePostal=" + postalCode)
+            fetchJSON("https://geo.api.gouv.fr/communes?codePostal=" + code)
                 .then(data => {
                     if(data.length > 0){
                         resolve(data)

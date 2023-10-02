@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="favicon" type="image/png" href="ressources/iw_icon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="./js/errors/CommuneNotFoundError.js"></script>
     <script src="./js/errors/InvalidCodeError.js"></script>
 </head>
@@ -26,7 +27,7 @@
             </select>
         </div>
         <div class="buttonContainer">
-            <label for="rangeNbJour">Nombre de jour : <span id="outputNbJour">1</span></label>
+            <label for="inputNbJour">Nombre de jour : <span id="outputNbJour">1</span></label>
             <input type="range" id="inputNbJour" min="1" max="7" step="1" value="1">
 
             <ul class="options">
@@ -68,6 +69,7 @@
 
     </footer>
 
+    <script src="./js/inputsControlor.js"></script>
     <script src="./js/generalRequests.js"></script>
     <script src="./js/communeRequests.js"></script>
     <script src="./js/weatherRequests.js"></script>
