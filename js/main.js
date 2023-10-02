@@ -35,7 +35,6 @@ window.addEventListener("load", event => {
 
                 if (weatherCardContainer.innerHTML != "") {
                     disabledInputs(true);
-                    console.log("a");   
                 }
             })
             .catch(error => {
