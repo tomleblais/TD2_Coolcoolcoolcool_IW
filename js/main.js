@@ -9,6 +9,9 @@ window.addEventListener("load", event => {
 
     submitButton.addEventListener("click", event => {
         const inseeCode = communeSelect.value;
+
+        disabledInputs();
+
         fetchWeather(inseeCode)
             .then(data => {
                 if (
