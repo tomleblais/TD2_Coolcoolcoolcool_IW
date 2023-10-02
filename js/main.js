@@ -5,14 +5,23 @@ window.addEventListener("load", event => {
     const postalCodeInput = document.getElementById("postalCodeInput");
     const submitButton = document.getElementById("submitButton");
     const weatherCardContainer = document.getElementsByClassName("weatherCardContainer")[0];
+    const nbDay = document.getElementById("inputNbJour").value;
 
     submitButton.addEventListener("click", event => {
         const inseeCode = communeSelect.value;
         fetchWeather(inseeCode)
             .then(data => {
+                if (
+                    isNaN(nbDay)
+                    || nbDay < 1
+                    || nbDay > 7
+                ) {
+                    nbDay = 1;
+                }
+
                 weatherCardContainer.innerHTML = "";
                 
-                for(let i = 0; i < 7; i++){
+                for(let i = 0; i < nbDay; i++){
                     const card = printWeatherCard(data.forecast[i]);
                     weatherCardContainer.appendChild(card);
 
