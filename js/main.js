@@ -8,9 +8,10 @@ window.addEventListener("load", event => {
     const nbDay = document.getElementById("inputNbJour").value;
 
     submitButton.addEventListener("click", event => {
+        const inseeCode = communeSelect.value;
+
         disabledInputs();
 
-        const inseeCode = parseInt(communeSelect.value);
         fetchWeather(inseeCode)
             .then(data => {
                 if (
@@ -22,10 +23,12 @@ window.addEventListener("load", event => {
                 }
 
                 weatherCardContainer.innerHTML = "";
-                for (let i = 0; i < nbDay; i++) {
-                    weatherCardContainer.appendChild(printWeatherCard(data.forecast[i]));
-                }
+                
+                for(let i = 0; i < nbDay; i++){
+                    const card = printWeatherCard(data.forecast[i]);
+                    weatherCardContainer.appendChild(card);
 
+                }
                 communeNameElement.textContent = data.city.name;
                 communeNameElement.hidden = false;
             })
@@ -50,16 +53,12 @@ window.addEventListener("load", event => {
                 submitButton.disabled = false;
             })
             .catch(error => {
-                if (error instanceof CommuneNotFoundError) {
-                    communeSelect.innerHTML = "";
-                    communeSelect.disabled = true;
+                communeSelect.innerHTML = "";
+                communeSelect.disabled = true;
 
-                    const option = document.createElement("option");
-                    option.textContent = "Selectionner"
-                    communeSelect.appendChild(option)
-
-                    submitButton.disabled = true;
-                }
+                const option = document.createElement("option");
+                option.textContent = "Selectionner"
+                communeSelect.appendChild(option)
             })
     })
 })

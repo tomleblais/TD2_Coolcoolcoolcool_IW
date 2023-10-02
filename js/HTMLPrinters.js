@@ -1,3 +1,15 @@
+function getCalendar(day) {
+    return {
+        "Monday": "Lundi",
+        "Tuesday": "Mardi",
+        "Wednesday": "Mercredi",
+        "Thursday": "Jeudi",
+        "Friday": "Vendredi",
+        "Saturday": "Samedi",
+        "Sunday": "Dimanche",
+    }[day];
+}
+
 /**
  * Return an option element from the specified JSON data
  * @param {object} data JSON data
@@ -28,8 +40,13 @@ function printWeatherCard(data){
     weatherCardElement.classList.add("weatherCard");
     weatherCardElement.classList.add(weatherInfo.type);
 
-    // <h3 class="weatherDescription">Soleil</h3>
-    const weatherDescriptionElement = document.createElement("h3");
+    // <h3 class="day">Lundi</h3>
+    const dayElement = document.createElement("h3");
+    dayElement.classList.add("day");
+    dayElement.textContent = getCalendar(moment(data.datetime).format("dddd"));
+
+    // <h4 class="weatherDescription">Soleil</h4>
+    const weatherDescriptionElement = document.createElement("h4");
     weatherDescriptionElement.classList.add("weatherDescription");
     weatherDescriptionElement.textContent = weatherInfo.description;
 
@@ -80,6 +97,7 @@ function printWeatherCard(data){
     const textNodeRain = document.createTextNode("de pluie");
     const textNodeSun = document.createTextNode("de soleil");
 
+    weatherCardElement.appendChild(dayElement);
     weatherCardElement.appendChild(weatherDescriptionElement);
     weatherCardElement.appendChild(weatherIcon);
     weatherCardElement.appendChild(temperature);

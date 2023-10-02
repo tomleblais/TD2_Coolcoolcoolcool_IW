@@ -1,9 +1,15 @@
 /* Google fonts import : Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
+
+/* Application of fonts for each element */
+
 * {
     font-family: "Roboto", sans-serif;
 }
+
+
+/* Definition of colours */
 
 :root {
     --primary-darkColor: darkturquoise;
@@ -14,6 +20,9 @@
     --primary-lightTransparentColor: rgba(255, 204, 0, 0.2);
     --primary-lightFontColor: linen;
 }
+
+
+/* HTML markup style */
 
 header {
     width: 100%;
@@ -72,6 +81,9 @@ select:disabled {
     display: none;
 }
 
+
+/* Classes CSS */
+
 button:active {
     box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -119,26 +131,33 @@ div.buttonContainer {
     padding-bottom: 25px;
 }
 
-@media screen and (min-width: 470px) {
-    div.buttonContainer {
-        width: 412px;
-    }
-
-    div.weatherCard {
-        width: 412px;
-    }
+div.weatherCard {
+    color: var(--primary-darkFontColor);
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 15px 0;
 }
 
-@media screen and (max-width: 470px) {
-    div.buttonContainer {
-        margin: 25px;
-        width: 95%;
-    }
-
-    div.weatherCard {
-        margin: 25px;
-    }
+div.weatherCard * {
+    margin: 15px auto;
+    font-weight: 100;
+    width: 100%;
 }
+
+.weatherCardContainer {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* Weather cards thems */
 
 .snowy {
     background-color: rgb(245, 241, 241);
@@ -166,30 +185,29 @@ div.buttonContainer {
     color: var(--primary-lightFontColor) !important;
 }
 
-div.weatherCard {
-    color: var(--primary-darkFontColor);
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    padding: 15px 0;
-}
+/* Scrollbar CSS : https://codepen.io/stephenpaton-tech/full/JjRvGmY */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-darkColor) #ffffff;
+  }
 
-div.weatherCard * {
-    margin: 15px auto;
-    font-weight: 100;
-    width: 100%;
-}
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
 
-.weatherCardContainer {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 25px;
-}
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary-darkColor);
+    border-radius: 20px;
+  }
+
+
+/* Media queries */
 
 @media screen and (max-width: 1300px) {
     .weatherCardContainer {
@@ -217,26 +235,26 @@ div.weatherCard * {
     }
 }
 
-/* Scrollbar CSS : https://codepen.io/stephenpaton-tech/full/JjRvGmY */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-darkColor) #ffffff;
-  }
+@media screen and (min-width: 470px) {
+    div.buttonContainer {
+        width: 412px;
+    }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 3px;
-  }
+    div.weatherCard {
+        width: 412px;
+    }
+}
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+@media screen and (max-width: 470px) {
+    div.buttonContainer {
+        margin: 25px;
+        width: 95%;
+    }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-darkColor);
-    border-radius: 20px;
-  }
+    div.weatherCard {
+        margin: 25px;
+    }
+}
 
 /* Animation */
 
