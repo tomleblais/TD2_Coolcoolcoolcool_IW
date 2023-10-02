@@ -84,7 +84,7 @@ div.buttonContainer {
     flex-wrap: wrap;
     background-color: var(--primary-darkColor);
     border-radius: 10px;
-    margin: 10px auto;
+    margin: 5px auto;
 }
 
 .temperature {
@@ -132,7 +132,7 @@ div.buttonContainer {
 @media screen and (max-width: 470px) {
     div.buttonContainer {
         margin: 25px;
-        width: 100%;
+        width: 95%;
     }
 
     div.weatherCard {
