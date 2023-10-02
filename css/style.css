@@ -159,29 +159,93 @@ div.weatherCard * {
 
 /* Weather cards thems */
 
+.snowy:hover {
+    background-image: url('../ressources/snowy.png');
+    background-size: cover;
+    background-position: center;
+    animation: dezoom 1s forwards;
+}
+
+.sunny:hover {
+    background-image: url('../ressources/sunny.png');
+    background-size: cover;
+    background-position: center;
+    animation: dezoom 1s forwards;
+}
+
+.cloudy:hover {
+    background-image: url('../ressources/cloudy.png');
+    background-size: cover;
+    background-position: center;
+    animation: dezoom 1s forwards;
+    color: var(--primary-lightFontColor) !important;
+}
+
+.foggy:hover {
+    background-image: url('../ressources/foggy.png');
+    background-size: cover;
+    background-position: center;
+    animation: dezoom 1s forwards;
+}
+
+.rainy:hover {
+    background-image: url('../ressources/rainy.png');
+    background-size: cover;
+    background-position: center;
+    animation: dezoom 1s forwards;
+    color: var(--primary-lightFontColor) !important;
+}
+
+.stormy:hover {
+    background-image: url('../ressources/stormy.png');
+    background-size: cover;
+    background-position: center;
+    animation: dezoom 1s forwards;
+    color: var(--primary-lightFontColor) !important;
+}
+
 .snowy {
-    background-color: rgb(245, 241, 241);
+    background-image: url('../ressources/snowy.png');
+    background-size: cover;
+    background-position: center;
+    animation: zoom 2s forwards;
 }
 
 .sunny {
-    background-color: skyblue;
+    background-image: url('../ressources/sunny.png');
+    background-size: cover;
+    background-position: center;
+    animation: zoom 2s forwards;
 }
 
 .cloudy {
-    background-color: turquoise;
+    background-image: url('../ressources/cloudy.png');
+    background-size: cover;
+    background-position: center;
+    animation: zoom 2s forwards;
+    color: var(--primary-lightFontColor) !important;
 }
 
 .foggy {
-    background-color: gainsboro;
+    background-image: url('../ressources/foggy.png');
+    background-size: cover;
+    background-position: center;
+    animation: zoom 2s forwards;
 }
 
 .rainy {
-    background-color: rgb(141, 141, 141);
+    background-image: url('../ressources/rainy.png');
+    background-size: cover;
+    background-position: center;
+    animation: zoom 2s forwards;
     color: var(--primary-lightFontColor) !important;
 }
 
 .stormy {
-    background-color: dimgray;
+    background-image: url('../ressources/stormy.png');
+    background-size: cover;
+    background-position: center;
+    animation: zoom 2s forwards;
     color: var(--primary-lightFontColor) !important;
 }
 
@@ -328,23 +392,22 @@ div.weatherCard * {
 }
 
 /* Animation */
-
-/* @keyframes rightSlide {
+  
+@keyframes dezoom {
     0% {
-      right: -100%;
-      opacity: 0;
+      background-size: 500% 500%;
     }
     100% {
-      right: 2%;
-      opacity: 1;
+      background-size: 100% 100%;
     }
   }
   
-  .animIcon {
-    position: relative;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
-    animation: rightSlide 2s ease-out;
-  } */
+  @keyframes zoom {
+    0% {
+      background-size: 100% 100%;
+    }
+    100% {
+      background-size: 500% 500%;
+    }
+  }
   
