@@ -24,21 +24,6 @@ window.addEventListener("load", event => {
                     weatherCardContainer.appendChild(printWeatherCard(data.forecast[i]));
                 }
 
-                /*const card = printWeatherCard(data.forecast[0]);
-                const cardDay2 = printWeatherCard(data.forecast[1]);
-                const cardDay3 = printWeatherCard(data.forecast[2]);
-                const cardDay4 = printWeatherCard(data.forecast[3]);
-                const cardDay5 = printWeatherCard(data.forecast[4]);
-                const cardDay6 = printWeatherCard(data.forecast[5]);
-                const cardDay7 = printWeatherCard(data.forecast[6]);
-                weatherCardContainer.appendChild(card);
-                weatherCardContainer.appendChild(cardDay2);
-                weatherCardContainer.appendChild(cardDay3);
-                weatherCardContainer.appendChild(cardDay4);
-                weatherCardContainer.appendChild(cardDay5);
-                weatherCardContainer.appendChild(cardDay6);
-                weatherCardContainer.appendChild(cardDay7);*/
-
                 communeNameElement.textContent = data.city.name;
                 communeNameElement.hidden = false;
             })
