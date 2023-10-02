@@ -1,8 +1,8 @@
-/* Constantes ---------------------------------- */
+/* Constantes --------------------------------------------------------------- */
 const INPUT_NBJOUR = document.getElementById("inputNbJour");
 const OUTPUT_NBJOUR = document.getElementById("outputNbJour");
 
-/* Evenements ---------------------------------- */
+/* Evenements --------------------------------------------------------------- */
 INPUT_NBJOUR.addEventListener("input", evt => {
     if (
         isNaN(INPUT_NBJOUR.value)
@@ -14,3 +14,9 @@ INPUT_NBJOUR.addEventListener("input", evt => {
 
     OUTPUT_NBJOUR.textContent = INPUT_NBJOUR.value;
 });
+
+/* Fonctions ---------------------------------------------------------------- */
+
+function disabledInputs() {
+    INPUT_NBJOUR.setAttribute("disabled", true);
+}

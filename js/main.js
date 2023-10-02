@@ -8,6 +8,8 @@ window.addEventListener("load", event => {
     const nbDay = document.getElementById("inputNbJour").value;
 
     submitButton.addEventListener("click", event => {
+        disabledInputs();
+
         const inseeCode = parseInt(communeSelect.value);
         fetchWeather(inseeCode)
             .then(data => {
