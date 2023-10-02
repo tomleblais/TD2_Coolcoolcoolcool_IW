@@ -52,7 +52,7 @@ h1 {
     font-size: xx-large;
 }
 
-input,
+input[type=number],
 button,
 select {
     position: relative;
@@ -205,11 +205,77 @@ div.weatherCard * {
     background-color: var(--primary-darkColor);
     border-radius: 20px;
   }
+  
+.detailsContainer {
+    display: block;
+    /* width: inherit; */
+    user-select: none;
+}
+
+.dayInputContainer {
+    padding: 5px;
+    margin: 5px auto;
+    color: #fff;
+}
+
+.dayInputContainer input[type=range] {
+    margin: 10px 0;
+}
+
+.optionsContainer {
+    display: block;
+    margin: 5px auto;
+}
+
+.optionsContainer .optionsTitle {
+    padding: 10px;
+    background-color: #fff;
+    display: block;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 300px;
+}
+.optionsContainer:hover .optionsTitle {
+    border-radius: 5px 5px 0 0;
+    background-color: #eee;
+}
 
 /* Pull down menu */
 
 .options {
-    
+    position: absolute;
+    display: none;
+    z-index: 1;
+    width: 310px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 0 0 5px 10px;
+    box-shadow: 0 5px 5px #ccc;
+}
+
+.optionsContainer:hover .options {
+    display: block;
+}
+
+.options li {
+    padding: 5px;
+    display: block;
+}
+.options li:hover {
+    background-color: #eee;
+}
+
+.options li {
+    border-radius: 5px;
+}
+
+.options li input[type=checkbox] {
+    margin: 0 5px;
+}
+
+.options li label {
+    cursor: pointer;
+    display: block;
 }
 
 /* Media queries */
