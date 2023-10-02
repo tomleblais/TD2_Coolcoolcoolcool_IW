@@ -1,11 +1,11 @@
 /* Constantes ---------------------------------- */
 const INPUT_NBJOUR = document.getElementById("inputNbJour");
-const OUTPUT_NBJOUR = document.getElementById("ouputNbJour");
+const OUTPUT_NBJOUR = document.getElementById("outputNbJour");
 
 /* Evenements ---------------------------------- */
 INPUT_NBJOUR.addEventListener("input", evt => {
     if (
-        isNaN(INPUT_NBJOUR)
+        isNaN(INPUT_NBJOUR.value)
         || INPUT_NBJOUR.value < 1
         || INPUT_NBJOUR.value > 7
     ) {
