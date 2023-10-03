@@ -21,6 +21,10 @@ const ALL_OPTIONS = [
 let all_disabled = false;
 
 /* Evenements --------------------------------------------------------------- */
+
+/**
+ * Protège l'intervale de la valeur entrée et l'affiche à l'écrant
+ */
 INPUT_NBJOUR.addEventListener("input", evt => {
     if (
         isNaN(INPUT_NBJOUR.value)
@@ -33,6 +37,9 @@ INPUT_NBJOUR.addEventListener("input", evt => {
     OUTPUT_NBJOUR.textContent = INPUT_NBJOUR.value;
 });
 
+/**
+ * Sélectionne où desélectionne tous les éléments
+ */
 INPUT_TOUT_SELECTIONNER.addEventListener("click", evt => {
     const check = (INPUT_TOUT_SELECTIONNER.checked);
 
@@ -41,7 +48,9 @@ INPUT_TOUT_SELECTIONNER.addEventListener("click", evt => {
     }
 });
 
-// désactive input_tout_selectionner si un est déselectionner
+/**
+ * Désactive input_tout_selectionner si un est déselectionner
+ */
 for (let i = 0; i < ALL_OPTIONS.length; i++) {
     ALL_OPTIONS[i].addEventListener("click", evt => {
         INPUT_TOUT_SELECTIONNER.checked = false;
@@ -50,9 +59,11 @@ for (let i = 0; i < ALL_OPTIONS.length; i++) {
 
 /* Fonctions ---------------------------------------------------------------- */
 
-/*
-Si inactif = etat alors return
-*/
+/**
+ * Désactive ou réactive les inputs
+ * @param {*} inactif true : désactive | false : active
+ * @returns 
+ */
 function disabledInputs(inactif) {
     if (
         inactif != true
