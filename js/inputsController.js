@@ -50,10 +50,19 @@ INPUT_TOUT_SELECTIONNER.addEventListener("click", evt => {
 
 /**
  * Désactive input_tout_selectionner si un est déselectionner
+ * ou l'active si ils sont tous sélectionner
  */
 for (let i = 0; i < ALL_OPTIONS.length; i++) {
     ALL_OPTIONS[i].addEventListener("click", evt => {
-        INPUT_TOUT_SELECTIONNER.checked = false;
+        let nbNonSelectionner = 0;
+
+        for (let i = 0; i < ALL_OPTIONS.length; i++) {
+            if (ALL_OPTIONS[i].checked == false) {
+                nbNonSelectionner++;
+            }
+        }
+
+        INPUT_TOUT_SELECTIONNER.checked = (nbNonSelectionner == 0);
     });
 }
 
