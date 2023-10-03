@@ -121,5 +121,92 @@ function printWeatherCard(data){
     statistics.appendChild(sunParagraph);
     statistics.appendChild(rainParagraph);
 
+    // add footer
+    const footer = printWeatherCardFooter(data);
+    if (footer != null) {
+        weatherCardElement.appendChild(footer);
+    }
+
     return weatherCardElement;
+}
+
+/**
+ * Make the footer of the page
+ * @param {*} data 
+ * @returns 
+ */
+function printWeatherCardFooter(data) {
+    const footer = document.createElement("div");
+    let p = null;
+
+    if (INPUT_LATITUDE.checked) {
+        p = document.createElement("p");
+        p.textContent = `Latitude : ${data.latitude}`;
+        footer.appendChild(p);
+    }
+
+    if (INPUT_LONGITUDE.checked) {
+        p = document.createElement("p");
+        p.textContent = `Longitude : ${data.longitude}`;
+        footer.appendChild(p);
+    }
+
+    if (INPUT_CUMUL_PLUIE.checked) {
+        p = document.createElement("p");
+        p.textContent = `Cumul de pluie : ${data.probarain} mm`;
+        footer.appendChild(p);
+    }
+
+    if (INPUT_VENT_MOYEN.checked) {
+        p = document.createElement("p");
+        p.textContent = `Vent moyen : ${data.wind10m} km/h`;
+        footer.appendChild(p);
+    }
+
+    if (INPUT_DIRECTION_VENT.checked) {
+        p = document.createElement("p");
+        p.textContent = `Direction du vent : ${directionVent(data.dirwind10m)}`;
+        footer.appendChild(p);
+    }
+
+    return (p == null)? null: footer;
+}
+
+/**
+ * Return the direction (N-S-O-E) of a degree number 
+ * @param {*} direction 
+ * @returns N-S-O-E
+ */
+function directionVent(direction) {
+    const error = "Non défini";
+
+    // check direction
+    if (
+        isNaN(direction)
+        || direction < 0
+        || direction > 360
+    ) {
+        return error;
+    }
+
+    // read direction
+    if (direction >= 337.5 || direction < 22.5) {
+        return "Nord";
+    } else if (direction < 67.5) {
+        return "Nord-Est";
+    } else if (direction < 112.5) {
+        return "Est";
+    } else if (direction < 157.5) {
+        return "Sud-Est";
+    } else if (direction < 202.5) {
+        return "Sud";
+    } else if (direction < 247.5) {
+        return "Sud-Ouest";
+    } else if (direction < 292.5) {
+        return "Ouest";
+    } else if (direction < 337.5) {
+        return "Nord-Ouest";
+    } else {
+        return error;
+    }
 }
