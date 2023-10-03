@@ -59,6 +59,7 @@ for (let i = 0; i < ALL_OPTIONS.length; i++) {
         for (let i = 0; i < ALL_OPTIONS.length; i++) {
             if (ALL_OPTIONS[i].checked == false) {
                 nbNonSelectionner++;
+                break;
             }
         }
 
