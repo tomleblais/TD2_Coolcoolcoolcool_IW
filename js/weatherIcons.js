@@ -90,7 +90,7 @@ const iconsData = [
 ]
 
 /**
- * Create and return an element representing an icon corresponding to the specified weather code
+ * Build and return an element representing an icon corresponding to the specified weather code
  * @param {number} code Weather code
  * @returns {HTMLElement} Icon corresponding to the specified code
  */
@@ -110,10 +110,16 @@ function createIcon(code) {
     const iconElement = document.createElement("i")
     iconElement.classList.add("wi")
     iconElement.classList.add(iconData.className)
+    iconElement.title = iconData.description
     // iconElement.classList.add(iconData.type)
     return iconElement
 }
 
+/**
+ * Return the icon data from the specified weather code
+ * @param {number} weatherCode Weather code
+ * @returns {object} Icon data
+ */
 function getIconData(weatherCode) {
     return iconsData.find((value, index, obj) => value.code == weatherCode)
 }

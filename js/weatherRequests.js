@@ -13,10 +13,8 @@ function fetchWeather(inseeCode){
             reject(new InvalidCodeError("Invalid insee code"));
         } else {
             fetchJSON(`https://api.meteo-concept.com/api/forecast/daily?token=${TOKEN}&insee=${inseeCode}`)
-            .then(data => {
-                resolve(data);
-            })
-            .catch(reject);
+                .then(resolve)
+                .catch(reject);
         }
     });
 }

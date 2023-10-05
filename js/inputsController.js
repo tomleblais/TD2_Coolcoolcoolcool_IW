@@ -17,13 +17,13 @@ const ALL_OPTIONS = [
     INPUT_DIRECTION_VENT
 ];
 
-/* Varaiblse ---------------------------------------------------------------- */
+/* Variables ---------------------------------------------------------------- */
 let all_disabled = false;
 
 /* Evenements --------------------------------------------------------------- */
 
 /**
- * Protège l'intervale de la valeur entrée et l'affiche à l'écrant
+ * Protège l'intervale de la valeur entrée et l'affiche à l'écran
  */
 INPUT_NBJOUR.addEventListener("input", evt => {
     if (
@@ -38,7 +38,7 @@ INPUT_NBJOUR.addEventListener("input", evt => {
 });
 
 /**
- * Sélectionne où desélectionne tous les éléments
+ * Select or unselect each element
  */
 INPUT_TOUT_SELECTIONNER.addEventListener("click", evt => {
     const check = (INPUT_TOUT_SELECTIONNER.checked);
@@ -70,9 +70,8 @@ for (let i = 0; i < ALL_OPTIONS.length; i++) {
 /* Fonctions ---------------------------------------------------------------- */
 
 /**
- * Désactive ou réactive les inputs
- * @param {*} inactif true : désactive | false : active
- * @returns 
+ * Disable or enable each inputs
+ * @param {boolean} inactif true : disable | false : enable
  */
 function disabledInputs(inactif) {
     if (

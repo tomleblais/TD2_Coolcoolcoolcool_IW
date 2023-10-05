@@ -12,13 +12,14 @@
 /* Definition of colours */
 
 :root {
-    --primary-headerColor: whitesmoke;
+    --primary-headerColor: white;
     --primary-mainColor: whitesmoke;
-    --primary-containerColor: #ebe7e1;
-    --primary-buttonColor: #1967D2;
-    --primary-selectColor: #739eda;
+    --primary-containerColor: #ededed;
+    --primary-buttonColor: #1d71e7;
+    --primary-selectColor: #fff;
     --primary-lightFontColor: white;
     --primary-darkFontColor: #3C4043;
+    --primary-shadowColor: #aaa;
     /* --secondary-headerColor: black;
     --secondary-mainColor: #424549;
     --secondary-containerColor: #1e2124;
@@ -33,7 +34,7 @@
 /* HTML markup style */
 
 html {
-    background-color: var(--primary-headerColor);
+    background-color: var(--primary-mainColor);
 }
 
 header {
@@ -45,6 +46,7 @@ header {
     text-align: center;
     background-color: var(--primary-headerColor);
     z-index: 1;
+    box-shadow: 0 0 2px var(--primary-shadowColor);
 }
 
 main {
@@ -57,7 +59,7 @@ main {
     vertical-align: middle;
     z-index: 0;
     background-color: var(--primary-mainColor);
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 h1 {
@@ -69,8 +71,7 @@ h1 {
 input[type=number],
 button,
 select {
-    position: relative;
-    color: var(--primary-lightFontColor);
+    color: var(--primary-darkFontColor);
     border-radius: 10px;
     border: none;
     height: 48px;
@@ -89,21 +90,29 @@ select {
 button {
     background-color: var(--primary-buttonColor);
     user-select: none;
+    color: var(--primary-lightFontColor);
+    cursor: pointer;
+    box-shadow: inset -3px -3px 1px rgba(0, 0, 0, .25);
 }
 
 select:disabled {
     display: none;
 }
 
-
-/* Classes CSS */
+button:hover {
+    background-color: #1e7afc;
+}
 
 button:active {
-    box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 3px 3px 1px rgba(0, 0, 0, .25);
+    background: #144fa1;
     position: relative;
-    top: 0.5px;
-    left: 0.5px;
+    padding-top: 3px;
+    padding-left: 3px;
 }
+
+
+/* Classes CSS */
 
 div.buttonContainer {
     display: flex;
@@ -153,11 +162,27 @@ div.weatherCard {
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
-    padding: 15px 0;
+    box-shadow: 0 0 2px var(--primary-shadowColor);
+}
+
+div.weatherCard:hover {
+    box-shadow: 0 0 5px var(--primary-shadowColor);
+}
+
+div.weatherCard .weatherCardHeader {
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+div.weatherCard .weatherCardFooter {
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
 }
 
 div.weatherCard * {
-    margin: 15px auto;
+    margin: 0 auto;
+    padding: 5px;
     font-weight: 100;
     width: 100%;
 }
@@ -267,14 +292,18 @@ div.weatherCard * {
     display: block;
     /* width: inherit; */
     user-select: none;
+    padding: 5px 0;
 }
 
 .dayInputContainer {
-    padding: 5px;
-    margin: 5px auto;
+    /* padding: 5px; */
+    margin: 0 auto;
     color: var(--primary-darkFontColor);
 }
-
+.dayInputContainer label {
+    display: block;
+    text-align: center;
+}
 .dayInputContainer input[type=range] {
     margin: 10px 0;
 }
@@ -289,20 +318,53 @@ div.weatherCard * {
     background-color: #fff;
     display: block;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 300px;
 }
 
-.optionsContainer:hover .optionsTitle {
-    border-radius: 5px 5px 0 0;
+.options {
+    /* position: absolute; */
+    display: none;
+    z-index: 1;
+    width: 310px;
+    padding: 5px;
+    background-color: var(--primary-containerColor);
+    border-radius: 0 0 10px 10px;
+}
+
+.optionsContainer.visible .options {
+    display: block;
+    background-color: #fff;
+}
+
+.optionsContainer.visible .optionsTitle {
+    border-radius: 10px 10px 0 0;
+}
+
+.options li {
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+}
+
+.options li:hover {
     background-color: #eee;
+}
+
+.options li input[type=checkbox] {
+    margin: 0 5px;
+}
+
+.options li label {
+    cursor: pointer;
+    display: block;
 }
 
 /* Scrollbar CSS : https://codepen.io/stephenpaton-tech/full/JjRvGmY */
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--primary-headerColor) #ffffff;
+    scrollbar-color: var(--primary-mainColor) #ffffff;
 }
 
 /* Chrome, Edge, and Safari */
@@ -315,48 +377,11 @@ div.weatherCard * {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-headerColor);
+    background-color: var(--primary-mainColor);
     border-radius: 20px;
 }
 
 /* Pull down menu */
-
-.options {
-    position: absolute;
-    display: none;
-    z-index: 1;
-    width: 310px;
-    padding: 5px;
-    background-color: var(--primary-containerColor);
-    border-radius: 0 0 5px 10px;
-    box-shadow: 0 5px 5px #ccc;
-}
-
-.optionsContainer:hover .options {
-    display: block;
-}
-
-.options li {
-    padding: 5px;
-    display: block;
-}
-
-.options li:hover {
-    background-color: #eee;
-}
-
-.options li {
-    border-radius: 5px;
-}
-
-.options li input[type=checkbox] {
-    margin: 0 5px;
-}
-
-.options li label {
-    cursor: pointer;
-    display: block;
-}
 
 /* Media queries */
 
@@ -411,20 +436,20 @@ div.weatherCard * {
 
 @keyframes dezoom {
     0% {
-        background-size: 500% 500%;
+        background-size: 500% auto;
     }
 
     100% {
-        background-size: 100% 100%;
+        background-size: 100% auto;
     }
 }
 
 @keyframes zoom {
     0% {
-        background-size: 100% 100%;
+        background-size: 100% auto;
     }
 
     100% {
-        background-size: 500% 500%;
+        background-size: 500% auto;
     }
 }

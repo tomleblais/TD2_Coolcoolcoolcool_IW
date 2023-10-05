@@ -11,11 +11,12 @@ function getCalendar(day) {
 }
 
 /**
- * Return an option element from the specified JSON data
+ * Build and return an option element from the specified JSON data
  * @param {object} data JSON data
  * @returns {HTMLOptionElement} Option element
  */
 function printCommuneOption(data){
+    // <option value="14341">Ifs</option>
     const option = document.createElement("option");
     option.textContent = data.nom;
     option.value = data.code;
@@ -23,22 +24,21 @@ function printCommuneOption(data){
 }
 
 /**
- * Return a weather card element from weather data
+ * Return a weather card header element from weather data
  * @param {object} data Weather data
- * @returns {HTMLDivElement} Weather card
+ * @returns {HTMLDivElement} Weather card header
  */
-function printWeatherCard(data){
+function printWeatherCardHeader(data){
     const weatherInfo = getIconData(data.weather);
     const minInfo = parseInt(data.tmin);
     const maxInfo = parseInt(data.tmax);
     const rainInfo = parseInt(data.probarain);
     const sunInfo = parseInt(data.sun_hours);
-
-
-    // <div class="weatherCard">
-    const weatherCardElement = document.createElement("div");
-    weatherCardElement.classList.add("weatherCard");
-    weatherCardElement.classList.add(weatherInfo.type);
+    
+    // <div class="weatherCardHeader">
+    const weatherCardHeaderElement = document.createElement("div");
+    weatherCardHeaderElement.classList.add("weatherCardHeader");
+    weatherCardHeaderElement.classList.add(weatherInfo.type);
 
     // <h3 class="day">Lundi</h3>
     const dayElement = document.createElement("h3");
@@ -97,11 +97,11 @@ function printWeatherCard(data){
     const textNodeRain = document.createTextNode("de pluie");
     const textNodeSun = document.createTextNode("de soleil");
 
-    weatherCardElement.appendChild(dayElement);
-    weatherCardElement.appendChild(weatherDescriptionElement);
-    weatherCardElement.appendChild(weatherIcon);
-    weatherCardElement.appendChild(temperature);
-    weatherCardElement.appendChild(statistics);
+    weatherCardHeaderElement.appendChild(dayElement);
+    weatherCardHeaderElement.appendChild(weatherDescriptionElement);
+    weatherCardHeaderElement.appendChild(weatherIcon);
+    weatherCardHeaderElement.appendChild(temperature);
+    weatherCardHeaderElement.appendChild(statistics);
 
     temperature.appendChild(min);
     temperature.appendChild(textNodeDegrees);
@@ -121,22 +121,18 @@ function printWeatherCard(data){
     statistics.appendChild(sunParagraph);
     statistics.appendChild(rainParagraph);
 
-    // add footer
-    const footer = printWeatherCardFooter(data);
-    if (footer != null) {
-        weatherCardElement.appendChild(footer);
-    }
-
-    return weatherCardElement;
+    return weatherCardHeaderElement;
 }
 
 /**
- * Make the footer of the page
- * @param {*} data 
- * @returns 
+ * Build and return a weather card footer element from weather data
+ * @param {object} data Weather data
+ * @returns {HTMLDivElement | null} Weather card footer or null
  */
 function printWeatherCardFooter(data) {
+    // <div class="weatherCardFooter"></div>
     const footer = document.createElement("div");
+    footer.classList.add("weatherCardFooter");
     let p = null;
 
     if (INPUT_LATITUDE.checked) {
@@ -173,9 +169,31 @@ function printWeatherCardFooter(data) {
 }
 
 /**
- * Return the direction (N-S-O-E) of a degree number 
- * @param {*} direction 
- * @returns N-S-O-E
+ * Build and return a weather card element from weather data
+ * @param {object} data Weather data
+ * @returns {HTMLDivElement} Weather card
+ */
+function printWeatherCard(data) {
+    // <div class="weatherCard">
+    const weatherCardElement = document.createElement("div");
+    weatherCardElement.classList.add("weatherCard");
+
+    const header = printWeatherCardHeader(data);
+    const footer = printWeatherCardFooter(data);
+
+    weatherCardElement.appendChild(header);
+    // add footer
+    if (footer != null) {
+        weatherCardElement.appendChild(footer);
+    }
+
+    return weatherCardElement;
+}
+
+/**
+ * Return the direction (N-S-O-E) from a degree number 
+ * @param {number} direction Wind direction (in degrees)
+ * @returns {string} N-S-O-E
  */
 function directionVent(direction) {
     const error = "Non défini";

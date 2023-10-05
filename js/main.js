@@ -5,10 +5,8 @@ window.addEventListener("load", event => {
     const postalCodeInput = document.getElementById("postalCodeInput");
     const submitButton = document.getElementById("submitButton");
     const weatherCardContainer = document.getElementsByClassName("weatherCardContainer")[0];
-
-    communeSelect.addEventListener("click", event => {
-        disabledInputs(false);
-    });
+    const optionsTitle = document.querySelector("label.optionsTitle")
+    const optionsContainer = document.querySelector("div.optionsContainer")
 
     submitButton.addEventListener("click", event => {
         const inseeCode = communeSelect.value;
@@ -33,10 +31,6 @@ window.addEventListener("load", event => {
 
                 communeNameElement.textContent = data.city.name;
                 communeNameElement.hidden = false;
-
-                if (weatherCardContainer.innerHTML != "") {
-                    disabledInputs(true);
-                }
             })
             .catch(error => {
                 console.error(error)
@@ -45,8 +39,6 @@ window.addEventListener("load", event => {
     })
 
     postalCodeInput.addEventListener("input", event => {
-        disabledInputs(false);
-
         fetchCommune(postalCodeInput.value)
             .then(communes => {
 
@@ -68,5 +60,9 @@ window.addEventListener("load", event => {
                 option.textContent = "Selectionner"
                 communeSelect.appendChild(option)
             })
+    })
+
+    optionsTitle.addEventListener("click", event => {
+        optionsContainer.classList.toggle("visible")
     })
 })
