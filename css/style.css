@@ -163,6 +163,7 @@ div.weatherCard {
     flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 0 0 2px var(--primary-shadowColor);
+    user-select: none;
 }
 
 div.weatherCard:hover {
@@ -248,6 +249,7 @@ div.weatherCard * {
     background-size: cover;
     background-position: center;
     animation: zoom 2s forwards;
+    cursor: url('../ressources/cursors/snowflake.png'), auto;
 }
 
 .sunny {
@@ -255,6 +257,7 @@ div.weatherCard * {
     background-size: cover;
     background-position: center;
     animation: zoom 2s forwards;
+    cursor: url('../ressources/cursors/sun.png'), auto;
 }
 
 .cloudy {
@@ -263,6 +266,7 @@ div.weatherCard * {
     background-position: center;
     animation: zoom 2s forwards;
     color: var(--primary-lightFontColor) !important;
+    cursor: url('../ressources/cursors/cloud.png'), auto;
 }
 
 .foggy {
@@ -270,6 +274,7 @@ div.weatherCard * {
     background-size: cover;
     background-position: center;
     animation: zoom 2s forwards;
+    cursor: url('../ressources/cursors/fog.png'), auto;
 }
 
 .rainy {
@@ -278,6 +283,7 @@ div.weatherCard * {
     background-position: center;
     animation: zoom 2s forwards;
     color: var(--primary-lightFontColor) !important;
+    cursor: url('../ressources/cursors/rain.png'), auto;
 }
 
 .stormy {
@@ -286,6 +292,7 @@ div.weatherCard * {
     background-position: center;
     animation: zoom 2s forwards;
     color: var(--primary-lightFontColor) !important;
+    cursor: url('../ressources/cursors/lightning.png'), auto;
 }
 
 .detailsContainer {
