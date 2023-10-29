@@ -5,7 +5,7 @@
     ],
     "protocol_handlers": [
         {
-            "protocol": "tom.leblais@etu.unicaen.fr",
+            "protocol": "mailto:tom.leblais@etu.unicaen.fr",
             "url": "/newEmail?to=%s"
         }
     ],
