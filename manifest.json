@@ -39,14 +39,14 @@
             {
                 "platform": "windows",
                 "url": "https://tomleblais.github.io/TD2_Coolcoolcoolcool_IW/",
-                "id": "tomleblais.github.io"
+                "id": ""
             }
         ],
         "prefer_related_applications": true,
         "shortcuts": [
             {
                 "name": "Instant Weather",
-                "url": "/",
+                "url": "https://tomleblais.github.io/TD2_Coolcoolcoolcool_IW/",
                 "description": "Display the weather of the french city you choose."
             }
         ]
