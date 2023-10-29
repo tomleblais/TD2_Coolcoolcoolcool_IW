@@ -39,7 +39,7 @@
             {
                 "platform": "windows",
                 "url": "https://tomleblais.github.io/TD2_Coolcoolcoolcool_IW/",
-                "id": "com.example.instantWeather"
+                "id": "tomleblais.github.io"
             }
         ],
         "prefer_related_applications": true,
