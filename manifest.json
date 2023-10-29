@@ -1,0 +1,52 @@
+{
+    "display_override": [
+        "window-controls-overlay"
+    ],
+    "protocol_handlers": [
+        {
+            "protocol": "tom.leblais@etu.unicaen.fr",
+            "url": "/newEmail?to=%s"
+        }
+    ],
+    "name": "Instant Weather",
+    "short_name": "Instant Weather",
+    "start_url": "https://tomleblais.github.io/TD2_Coolcoolcoolcool_IW/",
+    "display": "standalone",
+    "description": "Made by Tom LB, Ethan LN, Clément S and Alexandre L. A weather app.",
+    "lang": "french",
+    "dir": "auto",
+    "theme_color": "#1d71e7",
+    "background_color": "#f5f5f5",
+    "orientation": "portrait",
+    "iarc_rating_id": "e58c174a-81d2-5c3c-32cc-34b8de4a52e9",
+    "icons": [
+        {
+            "src": "https://github.com/tomleblais/TD2_Coolcoolcoolcool_IW/blob/main/ressources/iw_icon.png",
+            "sizes": "2160x2160",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "https://github.com/tomleblais/TD2_Coolcoolcoolcool_IW/blob/main/ressources/screenshot.png",
+            "sizes": "1920x1080",
+            "type": "image/png",
+            "description": "A screenshot of the home page"
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "windows",
+            "url": "https://tomleblais.github.io/TD2_Coolcoolcoolcool_IW/"
+        }
+    ],
+    "prefer_related_applications": true,
+    "shortcuts": [
+        {
+            "name": "Instant Weather",
+            "url": "/",
+            "description": "Display the weather of the french city you choose."
+        }
+    ]
+}
